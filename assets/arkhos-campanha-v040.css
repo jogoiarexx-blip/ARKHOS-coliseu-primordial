@@ -1,0 +1,45 @@
+
+/* ARKHOS v0.4: navegação da campanha e experiência dos Ecos */
+.campaign-list {display:grid;grid-template-columns:1fr;gap:8px;max-width:490px;width:100%;margin:12px auto}
+.campaign-stage {
+ display:grid;grid-template-columns:43px 1fr 24px;align-items:center;gap:12px;
+ width:100%;min-height:58px;text-align:left;padding:8px 12px;
+ background:linear-gradient(112deg,rgba(25,26,31,.94),rgba(44,35,37,.94));
+ border:1px solid rgba(242,193,78,.35);border-radius:12px;
+ box-shadow:0 5px 15px rgba(0,0,0,.17);color:#efe3c5;cursor:pointer;
+ transition:background .16s,border-color .16s,transform .16s
+}
+.campaign-stage:hover:not(:disabled),.campaign-stage.active {
+ background:linear-gradient(110deg,rgba(65,49,29,.98),rgba(46,38,57,.98));
+ border-color:#f1c45f;transform:translateY(-1px)
+}
+.campaign-stage:disabled {cursor:not-allowed;opacity:.51}
+.mission-number {
+ display:grid;place-items:center;width:39px;height:39px;border:1px solid rgba(242,193,78,.5);
+ border-radius:10px;background:#2c2a28;color:#edc76b;font:700 1.14rem Georgia,serif
+}
+.mission-text {display:flex;flex-direction:column;gap:3px;min-width:0}
+.mission-text b {font:600 .96rem Georgia,serif;color:#fff2c8;white-space:normal}
+.mission-text small {font-size:.76rem;color:#c3b4a9}
+.mission-status {color:#f5c85e;text-align:center}
+.campaign-stage.locked .mission-number {filter:grayscale(1)}
+.title .title-menu {max-width:540px}
+.title-menu .campaign-list+.btn {width:100%;max-width:490px}
+.rank-label {font-size:.67rem;color:#f2c76c;font-weight:700}
+.campaign-reward {margin:10px 0 15px;border:1px solid rgba(242,193,78,.3);
+ background:linear-gradient(100deg,rgba(45,36,27,.8),rgba(44,34,55,.6));
+ padding:13px 15px;border-radius:12px}
+.campaign-reward h3 {font-size:1.05rem;margin-bottom:4px;color:#f4d98c}
+.campaign-reward p {color:#d6c9b3;font-size:.86rem;margin-bottom:11px}
+.rank-summary {display:flex;gap:6px;flex-wrap:wrap}
+.rank-summary span {background:rgba(12,14,20,.6);border:1px solid rgba(242,193,78,.2);
+ padding:5px 8px;border-radius:7px;font-size:.77rem}
+.rank-summary b {color:#f3cd7d}
+@media(max-width:640px) {
+ .campaign-list {gap:6px;margin:8px auto}
+ .campaign-stage {grid-template-columns:35px 1fr 23px;gap:9px;padding:6px 9px;min-height:49px}
+ .mission-number {height:32px;width:32px;font-size:.98rem}
+ .mission-text b {font-size:.85rem}
+ .mission-text small {font-size:.68rem}
+ .rank-summary span {font-size:.73rem}
+}
