@@ -4,6 +4,39 @@ Jogo original de estratégia por turnos em tabuleiro 3D, com criaturas chamadas 
 
 **Jogar:** https://jogoiarexx-blip.github.io/ARKHOS-coliseu-primordial/
 
+## Ascensão Primordial v0.6 — 13/11/2026
+
+A Forja agora possui um segundo ritual que **cria seis criaturas inéditas**, com silhuetas 3D procedurais, animações próprias de ociosidade e habilidades exclusivas. As duas criaturas-base permanecem disponíveis; a forma ascendida é uma terceira opção independente na seleção de esquadrão.
+
+### Como despertar uma nova criatura
+
+1. Eleve os dois Ecos de uma afinidade ao nível 3 (10 XP cada).
+2. Na Forja, crie o **Vínculo Primordial** da afinidade por **42 Fragmentos** (se ainda não tiver).
+3. Na seção **Ritual de Ascensão**, invista **56 Fragmentos** para despertar a nova forma.
+4. Volte ao editor de esquadrão: a nova criatura aparecerá na lista e poderá ser usada na campanha, respeitando o custo total de **18 pontos** e as **4 vagas iniciais** (até 2 reservas).
+
+O desbloqueio é permanente no salvamento local `arkhos.progress.v1`, com migração preservando as campanhas, runas, Vínculos, XP e Fragmentos existentes. Formas ascendidas começam pelo menos no **nível 3**, também ganham XP, podem usar uma runa própria e recebem os bônus do Vínculo de sua afinidade.
+
+### Formas e técnicas
+
+| Afinidade | Criatura | Custo de equipe | Modelo 3D | Habilidade especial |
+|---|---|---:|---|---|
+| Brasa | **Ignéox** | 4 | Quimera de magma, asas e crista ígnea | Nova Incandescente — área 3×3 e Queimadura |
+| Maré | **Talássia** | 4 | Serpente marinha, barbatanas e coral | Onda Ancestral — +12 PV, limpa Queimadura e Barreira 4 |
+| Selva | **Silvagor** | 4 | Guardião de madeira, chifres ramificados e folhas | Espinhos Ancestrais — dano e Enraizado |
+| Pedra | **Titanita** | 5 | Colosso de rocha, armadura e núcleo de cristal | Abalo Primordial — área 3×3 e ARM −2 |
+| Trovão | **Voltífera** | 5 | Grifo elétrico de asas segmentadas | Tempestade Viva — disparo e até 2 saltos elétricos |
+| Astral | **Astrávia** | 4 | Sentinela flutuante com anéis orbitais | Eclipse Vital — cura aliados e ataca inimigos em raio de 2 |
+
+As formas não substituem os Ecos originais nem consomem seus equipamentos. A invocação de um ascendido da reserva recebe uma curta animação de materialização em 3D; habilidades de área criam pulsos luminosos. O uso de materiais e geometrias compartilhadas é destinado a limitar o impacto de desempenho em celulares.
+
+### QA da v0.6
+
+- **35 verificações** passaram, incluindo seis habilidades, 3D procedural construído por cada modelo, animações de ociosidade, salvamento e interface da Forja.
+- **9 partidas completas** de IA × IA em 3 arenas, com equipes válidas contendo formas ascendidas, encerraram sem erro de lógica; houve uso das habilidades especiais.
+- Sintaxe do bundle validada com o analisador JavaScript.
+- **Limitação:** não houve teste visual com WebGL real em navegador nesta execução; modelo 3D e materialização devem ser conferidos no aparelho do jogador.
+
 ## Forja Primordial v0.5 — 13/11/2026
 
 Na tela principal ou no editor de esquadrão, abra a **Forja Primordial** para comprar e equipar runas. As compras usam Fragmentos de Alma, a moeda interna do jogo, sem compras com dinheiro real.
@@ -94,6 +127,6 @@ Sintaxe JavaScript validada, geração da arena e dos dois símbolos, padrões d
 
 ### Próximas expansões ainda não implementadas
 
-Modelos e animações próprios para formas evoluídas, fusão corporal com criatura inédita (além dos atuais Vínculos), novas arenas com cenários dedicados, modo versus local completo e sincronização do progresso entre dispositivos. Essas mecânicas exigem estado persistente, interface e balanceamento próprios.
+Novas arenas com geometrias e cenários exclusivos, animações esqueléticas mais complexas para as formas ascendidas, modo versus local completo, mais chefes de campanha e sincronização de progresso entre dispositivos. Essas mecânicas exigem estado persistente, interface e balanceamento adicionais.
 
 **Projeto independente.** Inspiração na estrutura tática de jogos de tabuleiro 3D, sem usar marcas, cartas, personagens ou recursos protegidos de outros jogos.
