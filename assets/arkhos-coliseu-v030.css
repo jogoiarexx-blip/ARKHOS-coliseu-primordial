@@ -1,0 +1,33 @@
+/* ARKHOS 0.3 - leitura tática inspirada em jogos de tabuleiro de monstros. */
+.card .tactic-note {
+  margin: 8px 0 6px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  color: #e9d8b1;
+  background: linear-gradient(135deg,rgba(242,193,78,.14),rgba(195,166,255,.09));
+  border: 1px solid rgba(242,193,78,.34);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+.card .tactic-note b { color: #ffe2a1; }
+.r-unit[data-id*="-simbolo-"] {
+  background: linear-gradient(110deg,#3a2b20,#242033);
+  border: 1px solid rgba(246,198,112,.65);
+  box-shadow: inset 0 0 16px rgba(251,205,121,.1);
+}
+.r-unit[data-id*="-simbolo-"] .sym { color: #f8d18b; filter: drop-shadow(0 0 4px rgba(255,196,79,.65)); }
+.r-unit[data-id*="-simbolo-"] .nm { color: #ffdfa5; font-weight: 700; }
+.r-unit[data-id*="-simbolo-"] .state { font-size: 0; }
+.r-unit[data-id*="-simbolo-"] .state::after {
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .045em;
+  color: #f8d18b;
+  content: "PROTEGER";
+}
+.r-unit.them[data-id*="-simbolo-"] .state::after { content: "ALVO FINAL"; color: #ffb3a4; }
+.r-unit[data-id*="-simbolo-"] .hpmini { height: 5px; }
+@media (max-width:700px) {
+  .card .tactic-note { font-size:.74rem; padding:7px; }
+  .r-unit[data-id*="-simbolo-"] .nm { letter-spacing:-.02em; }
+}
