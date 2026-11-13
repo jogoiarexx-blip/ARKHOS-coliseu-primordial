@@ -4,6 +4,43 @@ Jogo original de estratégia por turnos em tabuleiro 3D, com criaturas chamadas 
 
 **Jogar:** https://jogoiarexx-blip.github.io/ARKHOS-coliseu-primordial/
 
+## Forja Primordial v0.5 — 13/11/2026
+
+Na tela principal ou no editor de esquadrão, abra a **Forja Primordial** para comprar e equipar runas. As compras usam Fragmentos de Alma, a moeda interna do jogo, sem compras com dinheiro real.
+
+### Economia
+
+- Primeira partida / salvamento antigo: **48 Fragmentos** iniciais.
+- Vitória: **26 Fragmentos** na Ponte das Cinzas, **34** nos Jardins Afogados e **42** na Cúpula dos Trovões.
+- Empate: **12 Fragmentos**; derrota: **8 Fragmentos**.
+- Recompensa concedida uma vez ao concluir a batalha; saldo e inventário permanecem no navegador.
+
+### Cinco runas equipáveis
+
+| Runa | Custo (Fragmentos) | Efeito |
+| --- | ---: | --- |
+| Garra da Forja | 18 | +2 ATK |
+| Escudo de Basalto | 18 | +2 ARM |
+| Essência Vital | 20 | +10 PV |
+| Passos do Vendaval | 24 | +1 MOV |
+| Orbe da Visão | 24 | +1 ALC |
+
+Cada Eco pode usar **uma runa por vez**. As runas não são consumidas ao equipar ou remover, mas cada cópia comprada só pode ser equipada em uma criatura de cada vez. A loja limita a seis cópias de cada modelo.
+
+### Vínculos Primordiais
+
+Existem seis Vínculos elementais: Brasa (Carvúnio + Cinzalon), Maré (Goteju + Nacarino), Selva (Musgote + Larveira), Pedra (Pedruxo + Mineruva), Trovão (Zirpim + Falcorrente) e Astral (Lampejo + Nebuliz).
+
+- Exige as **duas criaturas da afinidade no nível 3** (XP acumulado de ao menos 10 cada).
+- Custa **42 Fragmentos**.
+- Desbloqueado permanentemente, concede **+1 ATK e +3 PV** a ambos os Ecos, inclusive quando forem invocados da reserva.
+- Não consome nem remove criaturas e pode acumular com uma runa.
+- Criaturas com runas ou vínculo recebem anel luminoso em 3D; as vinculadas também têm porte ligeiramente maior. Esses efeitos usam geometria procedural leve e não adicionam arquivos externos.
+
+### QA v0.5
+
+Testados sintaxe JavaScript, migração de salvamentos anteriores, compra e estoque de runas, equipar/remover, bloqueio de duplicação, fusão permanente, atributos efetivos e criação da tela da Forja. Também foram concluídas **3 simulações de duelo até o final**, uma por arena, com efeitos de vínculo e runas ativos. Teste visual manual com navegador real ainda é recomendado.
+
 ## Campanha e evolução v0.4 — 13/11/2026
 
 Agora o jogo contém três arenas de campanha, com adversários, terrenos e perigos diferentes:
@@ -57,6 +94,6 @@ Sintaxe JavaScript validada, geração da arena e dos dois símbolos, padrões d
 
 ### Próximas expansões ainda não implementadas
 
-Loja de runas e equipamentos, evolução visual/fusão dos Ecos, arenas totalmente remodeladas com cenários dedicados e modo versus local completo. Essas mecânicas exigem estado persistente, interface e balanceamento próprios.
+Modelos e animações próprios para formas evoluídas, fusão corporal com criatura inédita (além dos atuais Vínculos), novas arenas com cenários dedicados, modo versus local completo e sincronização do progresso entre dispositivos. Essas mecânicas exigem estado persistente, interface e balanceamento próprios.
 
 **Projeto independente.** Inspiração na estrutura tática de jogos de tabuleiro 3D, sem usar marcas, cartas, personagens ou recursos protegidos de outros jogos.
