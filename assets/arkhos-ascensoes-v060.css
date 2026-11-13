@@ -1,0 +1,43 @@
+/* ARKHOS v0.6 — seis formas de Ascensão e animação visual do ritual */
+.forge-ascensions{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:11px;margin:8px 0 20px}
+.forge-asc-card{position:relative;display:grid;grid-template-columns:44px 1fr;grid-template-rows:1fr auto;
+ gap:9px 13px;align-items:start;min-height:205px;padding:15px;background:
+ radial-gradient(circle at 0 0,color-mix(in srgb,var(--asc) 20%,transparent),transparent 65%),
+ linear-gradient(130deg,#292329,#1d1c25);border:1px solid color-mix(in srgb,var(--asc) 46%,#40332f);
+ border-radius:14px;overflow:hidden;box-shadow:0 10px 24px #0004}
+.forge-asc-card.awakened{background:
+ radial-gradient(circle at 5% 0,color-mix(in srgb,var(--asc) 28%,transparent),transparent 70%),
+ linear-gradient(135deg,#36303b,#252126);
+ border-color:var(--asc);box-shadow:inset 0 0 20px color-mix(in srgb,var(--asc) 14%,transparent),0 0 12px color-mix(in srgb,var(--asc) 12%,transparent)}
+.forge-asc-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;font-size:26px;
+ border:1px solid var(--asc);color:var(--asc);background:#17141dd1;box-shadow:0 0 12px color-mix(in srgb,var(--asc) 26%,transparent)}
+.forge-asc-details{display:flex;flex-direction:column;gap:4px}
+.forge-asc-details>b{font:600 1.2rem Georgia,serif;color:#fce7bd}
+.forge-asc-details>small{color:var(--asc);font-size:.76rem;font-weight:600}
+.forge-asc-details p{color:#d7c9b6;font-size:.81rem;line-height:1.45}
+.forge-asc-details p strong{color:#f7e2b8}
+.forge-asc-card>.btn{grid-column:1/-1;width:100%;min-height:41px}
+.forge-asc-card.just-awakened{animation:ark6-awaken 1.4s ease-out both;isolation:isolate}
+.forge-asc-card.just-awakened::after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;
+ font-size:clamp(3rem,9vw,6rem);color:var(--asc);text-shadow:0 0 25px var(--asc);
+ pointer-events:none;animation:ark6-spark 1.35s ease-out forwards}
+@keyframes ark6-awaken{0%{filter:brightness(2);transform:scale(.97);box-shadow:0 0 55px var(--asc)}45%{filter:brightness(1.5);transform:scale(1.02)}100%{filter:brightness(1);transform:scale(1)}}
+@keyframes ark6-spark{0%{opacity:0;transform:scale(.2) rotate(-60deg)}35%{opacity:.9;transform:scale(1.2) rotate(0)}100%{opacity:0;transform:scale(2.5) rotate(85deg)}}
+.eco.static.ascended{border-color:color-mix(in srgb,var(--aff) 45%,#6c5240);
+ background:linear-gradient(120deg,color-mix(in srgb,var(--aff) 10%,#2c2528),#262128)}
+.eco.static.ascended .eco-name{color:#f5d9a4}
+.eco.static.ascended.locked{opacity:.67;filter:saturate(.63)}
+.pick .rank-label{font-size:.59rem;max-width:100%;text-align:center;white-space:normal}
+.pick:has(.rank-label) {min-height:80px}
+.pick:has(.rank-label) .pips{max-width:95%;overflow:hidden}
+@media(max-width:680px){
+ .forge-ascensions{grid-template-columns:1fr;gap:7px}
+ .forge-asc-card{grid-template-columns:34px 1fr;gap:7px 10px;padding:10px;min-height:unset}
+ .forge-asc-icon{width:34px;height:34px;font-size:20px}
+ .forge-asc-details>b{font-size:1.05rem}
+ .forge-asc-details p{font-size:.77rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .forge-asc-card.just-awakened{animation:none}
+ .forge-asc-card.just-awakened::after{display:none}
+}
