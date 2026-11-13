@@ -4,6 +4,30 @@ Jogo original de estratégia por turnos em tabuleiro 3D, com criaturas chamadas 
 
 **Jogar:** https://jogoiarexx-blip.github.io/ARKHOS-coliseu-primordial/
 
+## Campanha e evolução v0.4 — 13/11/2026
+
+Agora o jogo contém três arenas de campanha, com adversários, terrenos e perigos diferentes:
+
+1. **Ponte das Cinzas** — Arven, pontes que desabam e rajadas de calor.
+2. **Jardins Afogados** — Néréa, terrenos aquáticos, mata e marés danosas (Maré imune).
+3. **Cúpula dos Trovões** — Voltaris, cristais condutores e descargas elétricas (Trovão imune).
+
+Arenas são desbloqueadas progressivamente ao vencer a anterior. No menu, selecione uma das arenas disponíveis; após vencer, há um atalho para a próxima.
+
+### Progressão
+
+- A cada vitória, todos os Ecos do esquadrão recebem **3 XP**; sobreviventes recebem **+1 XP**.
+- Empates e derrotas concedem **1 XP de participação**.
+- **Níveis 1 a 5**, com limiares de XP cumulativos: 0, 4, 10, 19 e 31.
+- Cada nível acima do primeiro concede **+2 PV**; a cada dois níveis, **+1 ATK**; no nível 4, **+1 ARM**; no nível 5, **+1 MOV**.
+- Oponentes são fortalecidos conforme a missão: nível 1, 2 e 3.
+- Progressão é salva em `localStorage` usando **arkhos.progress.v1**, preservando as vitórias/medalhas anteriores; não é sincronizada entre dispositivos.
+- Fichas de criatura, seleção de equipe e tela de vitória mostram os níveis.
+
+### QA da v0.4
+
+Foram executados testes do núcleo em V8 para as três arenas: tamanho do tabuleiro, células únicas, spawns e símbolos livres, configuração de perigos, criação de unidades com bônus, geração de ação da IA e comando de passar. O bundle completo passou na verificação de sintaxe JavaScript. **O teste gráfico completo no navegador ainda está pendente.**
+
 ## Coliseu Tático v0.3 (13/11/2026)
 
 A atualização aproxima as *mecânicas de estratégia* de jogos de tabuleiro de criaturas como **Yu-Gi-Oh! Capsule Monster Coliseum**, mantendo identidade, personagens e regras próprios do ARKHOS.
@@ -33,6 +57,6 @@ Sintaxe JavaScript validada, geração da arena e dos dois símbolos, padrões d
 
 ### Próximas expansões ainda não implementadas
 
-Campanha com várias arenas, progressão individual dos Ecos, loja, evolução/fusão e modo versus local completo. Essas mecânicas exigem estado persistente, interface e balanceamento próprios.
+Loja de runas e equipamentos, evolução visual/fusão dos Ecos, arenas totalmente remodeladas com cenários dedicados e modo versus local completo. Essas mecânicas exigem estado persistente, interface e balanceamento próprios.
 
 **Projeto independente.** Inspiração na estrutura tática de jogos de tabuleiro 3D, sem usar marcas, cartas, personagens ou recursos protegidos de outros jogos.
